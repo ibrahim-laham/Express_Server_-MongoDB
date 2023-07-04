@@ -17,5 +17,14 @@ export const createProduct =  async (req: Request, res: Response) => {
 export const getProduct = async (req: Request, res: Response) => {
   res.status(200).json({
     message: "get product",
+    product: req.body,
+  })
+}
+
+export const updateProduct = async (req: Request, res: Response) => {
+  req.body.title = "something else";
+  res.status(200).json({
+    message: "update product",
+    product: req.body,
   })
 }

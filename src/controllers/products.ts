@@ -8,6 +8,9 @@ export const createProduct =  async (req: Request, res: Response) => {
   const productInfo = new Product({
     title: req.body.title,
     price: req.body.price,
+    image: req.body.image,
+    link: req.body.link,
+    releaseDate: req.body.releaseDate,
   })
   const product = await productServices.createProductService(productInfo);
 

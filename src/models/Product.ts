@@ -5,9 +5,9 @@ import mongoose, { Document } from "mongoose";
 export type ProductDocument = Document & {
   title: string;
   price: number;
-  /* image: string;
+  image: string;
   link: string;
-  releaseDate: string; */
+  releaseDate: string;
 }
 
 const productSchema = new mongoose.Schema({
@@ -19,15 +19,16 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  /* image: {
+  image: {
     type: String,
   },
   link: {
     type: String,
+    default: "https://www.spotify.com",
   },
   releaseDate: {
     type: Date,
-  }, */
+  },
 });
 
 export default mongoose.model<ProductDocument>("product", productSchema);

@@ -19,7 +19,7 @@ const getProductByTitleService = async (
 
 const updateProductService = async (productId: string, updateValue: string) => {
   try {
-   await Product.updateOne(
+   await Product.updateMany(
       { _id: productId },
       { $set: { title: updateValue } }
     );
@@ -29,7 +29,7 @@ const updateProductService = async (productId: string, updateValue: string) => {
 };
 
 const deleteProductByTitleService = async (productTitle: string) => {
-  await Product.deleteOne({title: productTitle});
+  await Product.deleteMany({title: productTitle});
 }
 
 export default {
